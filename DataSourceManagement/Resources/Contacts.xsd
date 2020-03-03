@@ -1,0 +1,23 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="ArrayOfContact">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="unbounded" name="Contact">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="FirstName" type="xsd:string" minOccurs='1' maxOccurs='1'/>
+              <xsd:element name="LastName" type="xsd:string" minOccurs='1' maxOccurs='1'/>
+              <xsd:element name="StreetName" type="xsd:string" minOccurs='1' maxOccurs='1'/>
+              <xsd:element name="HouseNumber" type="xsd:string" minOccurs='1' maxOccurs='1'/>
+              <xsd:element name="ApartmentNumber" type="xsd:string" minOccurs='1' maxOccurs='1'/>
+              <xsd:element name="PostalCode" type="xsd:string" minOccurs='1' maxOccurs='1'/>
+              <xsd:element name="Town" type="xsd:string" minOccurs='1' maxOccurs='1'/>
+              <xsd:element name="PhoneNumber" type="xsd:string" minOccurs='1' maxOccurs='1'/>
+              <xsd:element name="DateOfBirth" type="xsd:dateTime" minOccurs='1' maxOccurs='1'/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

@@ -1,0 +1,17 @@
+C:\Users\Kamil\Projects\CS\Macrix\ContactBook\DataSourceManagement\bin\Debug\DataSourceManagement.dll
+C:\Users\Kamil\Projects\CS\Macrix\ContactBook\DataSourceManagement\bin\Debug\DataSourceManagement.pdb
+C:\Users\Kamil\Projects\CS\Macrix\ContactBook\DataSourceManagement\obj\Debug\DataSourceManagement.csproj.CoreCompileInputs.cache
+C:\Users\Kamil\Projects\CS\Macrix\ContactBook\DataSourceManagement\obj\Debug\DataSourceManagement.dll
+C:\Users\Kamil\Projects\CS\Macrix\ContactBook\DataSourceManagement\obj\Debug\DataSourceManagement.pdb
+C:\Users\Kamil\Projects\CS\Macrix\ContactBook\DataSourceManagement\bin\Debug\System.IO.Abstractions.dll
+C:\Users\Kamil\Projects\CS\Macrix\ContactBook\DataSourceManagement\obj\Debug\DataSourceManagement.csproj.CopyComplete
+C:\Users\Kamil\Projects\CS\Macrix\Test\ContactBook\DataSourceManagement\bin\Debug\DataSourceManagement.dll
+C:\Users\Kamil\Projects\CS\Macrix\Test\ContactBook\DataSourceManagement\bin\Debug\DataSourceManagement.pdb
+C:\Users\Kamil\Projects\CS\Macrix\Test\ContactBook\DataSourceManagement\bin\Debug\System.IO.Abstractions.dll
+C:\Users\Kamil\Projects\CS\Macrix\Test\ContactBook\DataSourceManagement\obj\Debug\DataSourceManagement.csproj.CoreCompileInputs.cache
+C:\Users\Kamil\Projects\CS\Macrix\Test\ContactBook\DataSourceManagement\obj\Debug\DataSourceManagement.csproj.CopyComplete
+C:\Users\Kamil\Projects\CS\Macrix\Test\ContactBook\DataSourceManagement\obj\Debug\DataSourceManagement.dll
+C:\Users\Kamil\Projects\CS\Macrix\Test\ContactBook\DataSourceManagement\obj\Debug\DataSourceManagement.pdb
+C:\Users\Kamil\Projects\CS\Macrix\ContactBook\DataSourceManagement\obj\Debug\DataSourceManagement.Properties.Resources.resources
+C:\Users\Kamil\Projects\CS\Macrix\ContactBook\DataSourceManagement\obj\Debug\DataSourceManagement.csproj.GenerateResource.cache
+C:\Users\Kamil\Projects\CS\Macrix\ContactBook\DataSourceManagement\obj\Debug\DataSourceManagement.csprojAssemblyReference.cache

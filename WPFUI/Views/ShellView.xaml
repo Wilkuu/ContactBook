@@ -1,0 +1,205 @@
+﻿<Window x:Class="WPFUI.Views.ShellView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:proj="clr-namespace:WPFUI"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:cal="http://www.caliburnproject.org"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="ContactBook" Height="450" Width="1000" FontSize="20"
+        MinWidth="400" MinHeight="250">
+
+    <Grid>
+        
+        <!-- ### Column and row definitions ### -->
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        
+        <!-- ### Row 1 ### -->
+        
+        <TextBlock Text="My Contacts" Grid.Column="1" Grid.Row="1" FontSize="28"/>
+        
+        <!-- ### Row 2 ### -->
+        
+        <DataGrid x:Name="Contacts" Grid.Column="1" Grid.Row="2" AlternatingRowBackground="LightGray" AutoGenerateColumns="False"
+                  Grid.ColumnSpan="4" Margin="0 10" BorderThickness="0" CanUserSortColumns="False">
+
+            <!-- DataGrid event triggers -->
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="GotFocus">
+                    <cal:ActionMessage MethodName="SetCancelAndSaveActivity" />
+                </i:EventTrigger>
+                <i:EventTrigger EventName="LostFocus">
+                    <cal:ActionMessage MethodName="SetCancelAndSaveActivity" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+               
+            <!-- DataGrid Columns -->
+            <DataGrid.Columns>
+                
+                <!-- First name column -->
+                <DataGridTextColumn x:Name="FirstName" Header="First name"
+                                    Binding="{Binding Path=FirstName, ValidatesOnDataErrors=True, UpdateSourceTrigger=LostFocus}">
+                    <!-- First name validation ToolTip-->
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="DataGridCell.ToolTip"
+                                    Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                
+                <!-- Last name column -->
+                <DataGridTextColumn x:Name="LastName" Header="Last name"
+                                    Binding="{Binding Path=LastName, ValidatesOnDataErrors=True, UpdateSourceTrigger=LostFocus}">
+                    <!-- Last name validation ToolTip -->
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="DataGridCell.ToolTip"
+                                    Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                
+                <!-- Street name column -->
+                <DataGridTextColumn x:Name="StreetName" Header="Street name"
+                                    Binding="{Binding Path=StreetName, ValidatesOnDataErrors=True, UpdateSourceTrigger=LostFocus}">
+                    <!-- Street name validation ToolTip -->
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="DataGridCell.ToolTip"
+                                    Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+
+                <!-- House number column -->
+                <DataGridTextColumn x:Name="HouseNumber" Header="House no"
+                                    Binding="{Binding Path=HouseNumber, ValidatesOnDataErrors=True, UpdateSourceTrigger=LostFocus}">
+                    <!-- House number validation ToolTip -->
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="DataGridCell.ToolTip"
+                                    Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+
+                <!-- Apartment number column -->
+                <DataGridTextColumn x:Name="ApartmentNumber" Header="Apartment no"
+                                    Binding="{Binding Path=ApartmentNumber, ValidatesOnDataErrors=True, UpdateSourceTrigger=LostFocus}">
+                    <!-- Apartment number validation ToolTip -->
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="DataGridCell.ToolTip"
+                                    Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+
+                <!-- Postal code column -->
+                <DataGridTextColumn x:Name="PostalCode" Header="Postal code"
+                                    Binding="{Binding Path=PostalCode, ValidatesOnDataErrors=True, UpdateSourceTrigger=LostFocus}">
+                    <!-- Postal code validation ToolTip -->
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="DataGridCell.ToolTip"
+                                    Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+
+                <!-- Town column -->
+                <DataGridTextColumn x:Name="Town" Header="Town"
+                                    Binding="{Binding Path=Town, ValidatesOnDataErrors=True, UpdateSourceTrigger=LostFocus}">
+                    <!-- Town validation ToolTip -->
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="DataGridCell.ToolTip"
+                                    Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+
+                <!-- Phone number column -->
+                <DataGridTextColumn x:Name="PhoneNumber" Header="Phone number"
+                                    Binding="{Binding Path=PhoneNumber, ValidatesOnDataErrors=True, UpdateSourceTrigger=LostFocus}">
+                    <!-- Phone number validation ToolTip -->
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="DataGridCell.ToolTip"
+                                    Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+
+                <!-- Date of birth column -->
+                <DataGridTemplateColumn Header="Date of birth">
+                    <!-- Cell template when not editing date of birth -->
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=DateOfBirth, StringFormat=dd MMM yyyy}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <!-- Cell template when editing date of birth -->
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <DatePicker SelectedDate="{Binding Path=DateOfBirth}" FirstDayOfWeek="Monday"
+                                        DisplayDateEnd="{x:Static sys:DateTime.Now}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+
+                <!-- Age column -->
+                <DataGridTemplateColumn Header="Age">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock x:Name="DateOfBirth"
+                                       Text="{Binding Path=DateOfBirth, Converter={x:Static proj:BirthdayToAgeConverter.Instance}}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                
+                <!-- Delete button column -->
+                <DataGridTemplateColumn Header="Delete">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Command="Delete" Content="Delete"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        <!-- ### Row 3 ### -->
+        
+        <!-- Save button -->
+        <Button Content="Save" Grid.Column="3" Grid.Row="3" MinWidth="80"
+                IsEnabled="{Binding SavingActive}"
+                Command="{Binding SaveConfirmationDialogCommand}"
+                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
+        
+        <!-- Cancel button -->
+        <Button Content="Cancel" Grid.Column="4" Grid.Row="3" MinWidth="80" Margin="10 0 0 0"
+                IsEnabled="{Binding CancellingActive}"
+                Command="{Binding CancelConfirmationDialogCommand}"
+                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
+
+    </Grid>
+</Window>
